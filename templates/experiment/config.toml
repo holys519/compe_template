@@ -1,0 +1,11 @@
+seed = 42
+sample_size = 1000
+
+[runtime]
+device = "__DEVICE__"
+batch_size = __BATCH_SIZE__
+num_workers = __NUM_WORKERS__
+
+[validation]
+folds = [0]
+epochs = 1

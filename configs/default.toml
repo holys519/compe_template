@@ -1,0 +1,20 @@
+[project]
+competition = "replace-with-competition-slug"
+metric = "replace-with-cv-metric"
+seed = 42
+
+[paths]
+# COMPE_DATA_DIR takes precedence when it is set.
+data_dir = "data"
+
+[runtime.mac]
+device = "mps"
+num_workers = 0
+
+[runtime.local_gpu]
+device = "cuda"
+num_workers = 8
+
+[runtime.cluster_gpu]
+device = "cuda"
+num_workers = 8

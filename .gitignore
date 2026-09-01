@@ -1,0 +1,30 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+wandb/
+
+# Competition data is never committed.
+data/**
+!data/**/
+!data/**/.gitkeep
+
+# Keep run metadata and metrics, but not large/runtime artifacts.
+runs/**/stdout.log
+runs/**/artifacts/
+runs/**/*.ckpt
+runs/**/*.pt
+runs/**/*.pth
+runs/**/*.onnx
+runs/**/*.bin
+runs/**/*.npy
+runs/**/*.npz
+
+# Local caches and generated submissions.
+cache/
+submissions/*.csv

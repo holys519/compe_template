@@ -1,0 +1,17 @@
+version = 1
+id = "__EXP__"
+title = __TITLE__
+environment = "__ENV__"
+status = "planned"
+created_at = "__DATE__"
+base = __BASE__
+hypothesis = __HYPOTHESIS__
+change = __CHANGE__
+notes = ""
+tags = []
+
+# Replace this smoke-test gate with the competition's real, pre-registered criterion.
+[[success_criteria]]
+metric = "pipeline_ok"
+op = ">="
+value = 1.0
