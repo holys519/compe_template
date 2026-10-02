@@ -10,6 +10,15 @@ change = __CHANGE__
 notes = ""
 tags = []
 
+# --- pre-registration (fill BEFORE running; never edit after seeing results) ---
+# baseline = "frozen artifact B (path + sha)"      # what the candidate is compared with
+# candidate = "frozen artifact C (path + sha)"
+# reference = "frozen opponent / dataset R"          # e.g. a frozen opponent agent, or a fixed validation fold set
+# seeds = "NNNNN-MMMMM (ledger row in docs/evaluation-protocol.md), both seats / all folds"
+# decision = "one look: accept if 95% lower bound > 0; reject if upper < 0; stop if upper < min_effect"
+# guards = ["errors == 0 (and no silent fallback)", "max step time <= limit", "structural metrics within range"]
+# screen = "optional cheap screen on separate seeds; a screen is a filter, never evidence"
+
 # Replace this smoke-test gate with the competition's real, pre-registered criterion.
 [[success_criteria]]
 metric = "pipeline_ok"

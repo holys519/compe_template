@@ -21,3 +21,10 @@ python3 scripts/status.py
 9. Kaggleへの提出や外部へのpushは自動実行しない。
 
 共有化するのは2つ以上の実験で安定したコードだけとし、それまでは各 `expNNN/` 内で完結させる。
+
+## 対戦・シミュレーション系コンペで追加する規則（kaggriculture 2026-09 の教訓）
+10. 評価は `docs/evaluation-protocol.md` に従う: seed 台帳に事前登録、同 seed 両席、1 回だけ見る（640-800 seed）、screen は証拠にしない。
+11. 最初の 2 日で順位指標を分解した得点表を作り、ローカル指標と本番の相関を確認する。上位の試合は自分で眺める（`docs/experiment-workflow.md`、`.claude/skills/replay-cards`）。
+12. 無言のフォールバック（例外→PASS）を禁止し、telemetry と構造ガードを必須にする。新しいランナーは同一性確認から。
+13. 複数セッションは `docs/multi-session-coordination.md` に従う（自動追記ファイルの分離、他セッションの差分を add しない、提出は承認制で有効ペアを確認）。
+14. 自律ループは `docs/autonomous-loops.md` の基準（SE を測ってから閾値、ラウンド間で分布を引き継ぐ、α=0.005）。他人の agent に層を積むときは `docs/layering-on-foreign-agents.md` の前提を先に確認する。

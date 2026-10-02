@@ -13,7 +13,7 @@ ENV_DIRS = {
     "l": "l_experiments",
     "g": "g_experiments",
 }
-EXP_RE = re.compile(r"exp\d{3,}$")
+EXP_RE = re.compile(r"exp\d{3,}[mlg]?$")   # optional env suffix (exp082m) — the strict form blocked status.py for a week in kaggriculture
 OPS = {
     ">": operator.gt,
     ">=": operator.ge,
@@ -45,7 +45,7 @@ def validate_env(env: str) -> str:
 
 def validate_exp(exp: str) -> str:
     if not EXP_RE.fullmatch(exp):
-        raise ValueError(f"experiment id must match expNNN: {exp!r}")
+        raise ValueError(f"experiment id must match expNNN or expNNN[mlg]: {exp!r}")
     return exp
 
 

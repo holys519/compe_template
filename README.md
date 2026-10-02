@@ -3,6 +3,13 @@
 Kaggle コンペで、Macの軽量検証、RTX 3090の本実験、GPUクラスタ／クラウド実験へ同じ実験番号を引き継ぐためのテンプレートです。
 RSNA リポジトリの「仮説を先に書く」「実験ごとに設定と結果を残す」「`metrics.json` を結果の契約にする」という運用を、小さく再利用できる形にしています。
 
+## 対戦・シミュレーション系コンペ向けの追加ガイド（2026-10 追加）
+
+- [評価プロトコル](docs/evaluation-protocol.md)（seed 台帳・事前登録・one look・screen の偽陽性・無言失敗）
+- [複数セッションの協調](docs/multi-session-coordination.md)、[日次ループ](docs/daily-loop.md)、[自律ループの設計基準](docs/autonomous-loops.md)、[他人の agent に層を積む前提](docs/layering-on-foreign-agents.md)
+- Claude Code skills: `.claude/skills/{paired-eval,daily-loop,review-loop,replay-cards}`
+- 実例: kaggriculture リポジトリの `docs/report/kaggriculture_report_20260930.html`、`docs/research/retrospective_mac_20261002.md`
+
 ## 環境の使い分け
 
 | ディレクトリ | 環境 | 主な用途 |
