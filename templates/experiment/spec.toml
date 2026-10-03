@@ -11,13 +11,18 @@ notes = ""
 tags = []
 
 # --- pre-registration (fill BEFORE running; never edit after seeing results) ---
-# baseline = "frozen artifact B (path + sha)"      # what the candidate is compared with
-# candidate = "frozen artifact C (path + sha)"
-# reference = "frozen opponent / dataset R"          # e.g. a frozen opponent agent, or a fixed validation fold set
-# seeds = "NNNNN-MMMMM (ledger row in docs/evaluation-protocol.md), both seats / all folds"
-# decision = "one look: accept if 95% lower bound > 0; reject if upper < 0; stop if upper < min_effect"
-# guards = ["errors == 0 (and no silent fallback)", "max step time <= limit", "structural metrics within range"]
-# screen = "optional cheap screen on separate seeds; a screen is a filter, never evidence"
+[preregistration]
+baseline = ""        # frozen artifact B: path + sha (+ dependency versions)
+candidate = ""       # frozen artifact C: path + sha
+reference = ""       # frozen opponent / dataset / fold set R
+unit = "seed"        # independent unit: seed | fold | group
+units = ""           # registered block, e.g. "NNNNN-MMMMM (docs/evaluation-protocol.md row)"
+min_effect = 0.0     # smallest effect worth acting on
+alpha = 0.05         # with sidedness and family declared below
+sidedness = "two"    # "one" | "two"
+family = 1           # number of confirmations sharing this alpha
+decision = "one look: accept if the declared bound excludes 0 in the good direction; reject if it excludes 0 in the bad direction; else inconclusive (keep baseline)"
+guards = ["errors == 0 and fallback_count == 0", "all units present exactly once", "runtime within limit"]
 
 # Replace this smoke-test gate with the competition's real, pre-registered criterion.
 [[success_criteria]]

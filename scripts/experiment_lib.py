@@ -78,7 +78,7 @@ def experiment_ids(root: Path) -> set[str]:
 
 
 def next_experiment_id(root: Path) -> str:
-    numbers = [int(exp[3:]) for exp in experiment_ids(root)]
+    numbers = [int(re.sub(r"[mlg]$", "", exp[3:])) for exp in experiment_ids(root)]
     return f"exp{max(numbers, default=0) + 1:03d}"
 
 
