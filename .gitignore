@@ -1,30 +1,159 @@
-.DS_Store
-.env
-.venv/
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.python-version.local
+uv.lock
+poetry.lock
+Pipfile.lock
+
+# Test / lint / type-check caches
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
-.ipynb_checkpoints/
-wandb/
+.pytype/
+.pyre/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+nosetests.xml
+*.cover
 
-# Competition data is never committed.
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# ---------------------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.spyderproject
+.spyproject
+.ropeproject
+
+# ---------------------------------------------------------------------------
+# Secrets / local config
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+kaggle.json
+.kaggle/
+service-account*.json
+credentials*.json
+
+# ---------------------------------------------------------------------------
+# ML experiment tracking / tooling
+# ---------------------------------------------------------------------------
+wandb/
+mlruns/
+mlflow/
+lightning_logs/
+tensorboard/
+tb_logs/
+outputs/
+multirun/
+.hydra/
+.neptune/
+.clearml/
+.dvc/cache/
+.dvc/tmp/
+
+# Model weights and large binaries (anywhere in the tree)
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.tflite
+*.pb
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.parquet
+*.feather
+*.arrow
+*.bin
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# ---------------------------------------------------------------------------
+# Template-specific (keep in sync with README "ディレクトリ構成")
+# ---------------------------------------------------------------------------
+# Competition data is never committed; keep the directory skeleton.
 data/**
 !data/**/
 !data/**/.gitkeep
 
-# Keep run metadata and metrics, but not large/runtime artifacts.
+# Keep run metadata and metrics (JSON/TOML/MD), not logs or runtime artifacts.
 runs/**/stdout.log
+runs/**/stderr.log
+runs/**/*.log
 runs/**/artifacts/
-runs/**/*.ckpt
-runs/**/*.pt
-runs/**/*.pth
-runs/**/*.onnx
-runs/**/*.bin
-runs/**/*.npy
-runs/**/*.npz
 
 # Local caches and generated submissions.
 cache/
-submissions/*.csv
+.cache/
+tmp/
+submissions/*
+!submissions/.gitkeep
